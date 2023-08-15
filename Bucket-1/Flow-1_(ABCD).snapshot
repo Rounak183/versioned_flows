@@ -16,15 +16,15 @@
           "destination" : {
             "comments" : "",
             "groupId" : "3a769a7f-0892-37fd-858c-a2a3acff0b8a",
-            "id" : "6f6e3e20-8903-3878-99b1-8870cdc19ddf",
-            "instanceIdentifier" : "df56a6ef-0189-1000-efa2-db70f8412842",
-            "name" : "LogAttribute",
+            "id" : "b0cccdcf-6467-3b50-81c1-46fda6dfbe7a",
+            "instanceIdentifier" : "f3fada5f-0189-1000-d1e8-40fc93979f3e",
+            "name" : "UpdateAttribute",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "3a769a7f-0892-37fd-858c-a2a3acff0b8a",
-          "identifier" : "2ccc2093-642c-3a25-8666-2909e07be188",
-          "instanceIdentifier" : "df56ce7d-0189-1000-c582-9f2f851b3a55",
+          "identifier" : "948e746a-bad1-324a-a12f-1b0b8b159323",
+          "instanceIdentifier" : "f3fb3fee-0189-1000-00a7-46f2f9f2c649",
           "labelIndex" : 1,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -36,7 +36,7 @@
             "comments" : "",
             "groupId" : "3a769a7f-0892-37fd-858c-a2a3acff0b8a",
             "id" : "13424ec1-9914-3d6b-b7c2-0bada64ab535",
-            "instanceIdentifier" : "df567b4a-0189-1000-d178-c7e244bd29f3",
+            "instanceIdentifier" : "796d14aa-02c0-3089-8443-7bf516f16632",
             "name" : "GenerateFlowFile",
             "type" : "PROCESSOR"
           },
@@ -56,16 +56,16 @@
         "name" : "ABCD",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 896.0,
-          "y" : 240.0
+          "x" : 1016.0,
+          "y" : 280.0
         },
         "processGroups" : [ ],
         "processors" : [ {
-          "autoTerminatedRelationships" : [ ],
+          "autoTerminatedRelationships" : [ "success" ],
           "backoffMechanism" : "PENALIZE_FLOWFILE",
           "bulletinLevel" : "WARN",
           "bundle" : {
-            "artifact" : "nifi-standard-nar",
+            "artifact" : "nifi-update-attribute-nar",
             "group" : "org.apache.nifi",
             "version" : "1.23.0"
           },
@@ -74,93 +74,54 @@
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
           "groupIdentifier" : "3a769a7f-0892-37fd-858c-a2a3acff0b8a",
-          "identifier" : "6f6e3e20-8903-3878-99b1-8870cdc19ddf",
-          "instanceIdentifier" : "df56a6ef-0189-1000-efa2-db70f8412842",
+          "identifier" : "b0cccdcf-6467-3b50-81c1-46fda6dfbe7a",
+          "instanceIdentifier" : "f3fada5f-0189-1000-d1e8-40fc93979f3e",
           "maxBackoffPeriod" : "10 mins",
-          "name" : "LogAttribute",
+          "name" : "UpdateAttribute",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 488.0,
-            "y" : 320.0
+            "x" : 680.0,
+            "y" : 352.0
           },
           "properties" : {
-            "character-set" : "UTF-8",
-            "Log FlowFile Properties" : "true",
-            "Log Level" : "info",
-            "attributes-to-log-regex" : ".*",
-            "Output Format" : "Line per Attribute",
-            "Log Payload" : "false"
+            "Store State" : "Do not store state",
+            "canonical-value-lookup-cache-size" : "100",
+            "Stateful Variables Initial Value" : "${nextInt()}"
           },
           "propertyDescriptors" : {
-            "Log prefix" : {
-              "displayName" : "Log prefix",
+            "Delete Attributes Expression" : {
+              "displayName" : "Delete Attributes Expression",
               "identifiesControllerService" : false,
-              "name" : "Log prefix",
+              "name" : "Delete Attributes Expression",
               "sensitive" : false
             },
-            "character-set" : {
-              "displayName" : "Character Set",
+            "Store State" : {
+              "displayName" : "Store State",
               "identifiesControllerService" : false,
-              "name" : "character-set",
+              "name" : "Store State",
               "sensitive" : false
             },
-            "Log FlowFile Properties" : {
-              "displayName" : "Log FlowFile Properties",
+            "canonical-value-lookup-cache-size" : {
+              "displayName" : "Cache Value Lookup Cache Size",
               "identifiesControllerService" : false,
-              "name" : "Log FlowFile Properties",
+              "name" : "canonical-value-lookup-cache-size",
               "sensitive" : false
             },
-            "Log Level" : {
-              "displayName" : "Log Level",
+            "Stateful Variables Initial Value" : {
+              "displayName" : "Stateful Variables Initial Value",
               "identifiesControllerService" : false,
-              "name" : "Log Level",
-              "sensitive" : false
-            },
-            "attributes-to-ignore-regex" : {
-              "displayName" : "Attributes to Ignore by Regular Expression",
-              "identifiesControllerService" : false,
-              "name" : "attributes-to-ignore-regex",
-              "sensitive" : false
-            },
-            "Attributes to Ignore" : {
-              "displayName" : "Attributes to Ignore",
-              "identifiesControllerService" : false,
-              "name" : "Attributes to Ignore",
-              "sensitive" : false
-            },
-            "Attributes to Log" : {
-              "displayName" : "Attributes to Log",
-              "identifiesControllerService" : false,
-              "name" : "Attributes to Log",
-              "sensitive" : false
-            },
-            "attributes-to-log-regex" : {
-              "displayName" : "Attributes to Log by Regular Expression",
-              "identifiesControllerService" : false,
-              "name" : "attributes-to-log-regex",
-              "sensitive" : false
-            },
-            "Output Format" : {
-              "displayName" : "Output Format",
-              "identifiesControllerService" : false,
-              "name" : "Output Format",
-              "sensitive" : false
-            },
-            "Log Payload" : {
-              "displayName" : "Log Payload",
-              "identifiesControllerService" : false,
-              "name" : "Log Payload",
+              "name" : "Stateful Variables Initial Value",
               "sensitive" : false
             }
           },
-          "retriedRelationships" : [ ],
+          "retriedRelationships" : [ "success" ],
           "retryCount" : 10,
           "runDurationMillis" : 25,
           "scheduledState" : "ENABLED",
           "schedulingPeriod" : "1 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
-          "type" : "org.apache.nifi.processors.standard.LogAttribute",
+          "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ ],
@@ -177,13 +138,13 @@
           "executionNode" : "ALL",
           "groupIdentifier" : "3a769a7f-0892-37fd-858c-a2a3acff0b8a",
           "identifier" : "13424ec1-9914-3d6b-b7c2-0bada64ab535",
-          "instanceIdentifier" : "df567b4a-0189-1000-d178-c7e244bd29f3",
+          "instanceIdentifier" : "796d14aa-02c0-3089-8443-7bf516f16632",
           "maxBackoffPeriod" : "10 mins",
           "name" : "GenerateFlowFile",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 464.0,
-            "y" : 88.0
+            "x" : 328.0,
+            "y" : -64.0
           },
           "properties" : {
             "character-set" : "UTF-8",
@@ -237,7 +198,7 @@
               "sensitive" : false
             }
           },
-          "retriedRelationships" : [ ],
+          "retriedRelationships" : [ "success" ],
           "retryCount" : 10,
           "runDurationMillis" : 0,
           "scheduledState" : "ENABLED",
